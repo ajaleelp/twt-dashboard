@@ -2,9 +2,13 @@
   "name": "twt-dashboard",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "3.5"
+    "@rails/webpacker": "3.5",
+    "bootstrap": "^4.3.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.1",
     "webpack-dev-server": "2.11.2"
   }
 }

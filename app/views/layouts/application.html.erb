@@ -7,20 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
-      <div id="notify">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
-      <div id="user-info">
-          <% if user_signed_in? %>
-              [<%= link_to 'Sign out', destroy_user_session_path, method: :delete  %>]
-            <% else %>
-              <%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %>
-            <% end %>
-        </div>
     <%= yield %>
   </body>
 </html>

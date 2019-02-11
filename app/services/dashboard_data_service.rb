@@ -10,6 +10,40 @@ class DashboardDataService
   end
 
   def tweets
-    @client.user_timeline
+    @tweets ||= @client.user_timeline(count: 500)
+  end
+
+  def mentions
+    @mentions ||= @client.mentions_timeline
+  end
+
+  def followers
+    @client.followers
+  end
+
+  def friends
+    @client.friends
+  end
+
+  def profile
+    @profile ||= begin
+      profile = @client.user
+      {
+        avatar: profile.profile_image_uri.to_str.gsub('_normal', ''),
+        name: profile.name,
+        screen_name: profile.screen_name,
+        tweets_count: profile.tweets_count,
+        friends_count: profile.friends_count,
+        followers_count: profile.followers_count,
+        favorites_count: original_tweets.map(&:favorite_count).sum,
+        retweets_count: original_tweets.map(&:retweet_count).sum
+      }
+    end
+  end
+
+  private
+
+  def original_tweets
+    tweets.filter { |t| !t.retweeted_tweet? }
   end
 end

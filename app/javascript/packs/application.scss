@@ -1,0 +1,61 @@
+@import '~bootstrap/scss/bootstrap';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+body {
+  background-image: linear-gradient(to right, #1DA1F2, #5b86ef);
+}
+
+.dashboard-card {
+  border: 1px solid #1DA1F2;
+}
+
+.dashboard-header {
+  height: 200px;
+  margin: 0;
+  border: 0;
+  background-color: whitesmoke;
+}
+
+.profile-card__profile-pic {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.profile-card__name {
+  font-size: xx-large;
+  color: #1DA1F2;
+  margin-bottom: -5px;
+}
+
+.profile-card__handle {
+  font-size: small;
+  color: gray;
+}
+
+.overview-card {
+  margin-right: 50px;
+}
+
+.overview-card__entry {
+  display: flex;
+  margin: 3px 0;
+}
+
+.overview-card__entry-title {
+  font-size: large;
+}
+
+.overview-card__entry-data {
+  color: #1DA1F2;
+  font-size: larger;
+}
+
+.stats-card__entry {
+  display: flex;
+  margin: 3px 0;
+}
+
+.stats-card__icon {
+  color: red;
+}
