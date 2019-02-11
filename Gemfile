@@ -65,3 +65,10 @@ gem 'twitter'
 
 # Awesome templating for HTML
 gem 'slim'
+
+gem 'activerecord-session_store'
+
+# Twitter omniauth via devise
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
