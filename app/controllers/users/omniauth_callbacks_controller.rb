@@ -7,6 +7,12 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       email: auth.info.email,
       password: Devise.friendly_token
     )
+
+    @user.update!(
+      twitter_access_token: auth.credentials.token,
+      twitter_access_secret: auth.credentials.secret
+    )
+
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
       set_flash_message(:notice, :success, kind: 'Twitter') if is_navigational_format?

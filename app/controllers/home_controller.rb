@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def dashboard
-    @data = DashboardDataService.new(params[:screen_name]) if params[:screen_name]
+    @data = DashboardDataService.new(current_user) if current_user
   end
 end
