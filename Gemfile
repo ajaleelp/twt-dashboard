@@ -72,3 +72,6 @@ gem 'activerecord-session_store'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
+
+# Webpack FTW
+gem 'webpacker', '~> 3.5'
