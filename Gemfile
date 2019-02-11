@@ -62,3 +62,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # A Ruby interface to the Twitter API.
 gem 'twitter'
+
+# Awesome templating for HTML
+gem 'slim'
