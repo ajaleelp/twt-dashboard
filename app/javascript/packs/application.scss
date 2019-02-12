@@ -1,8 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
 
 body {
   background-image: linear-gradient(to right, #1DA1F2, #5b86ef);
+}
+
+.twt-color {
+  color: #1DA1F2;
 }
 
 .dashboard-card {
@@ -10,7 +17,7 @@ body {
 }
 
 .dashboard-header {
-  height: 200px;
+  min-height: 200px;
   margin: 0;
   border: 0;
   background-color: whitesmoke;
@@ -33,22 +40,9 @@ body {
   color: gray;
 }
 
-.overview-card {
-  margin-right: 50px;
-}
-
-.overview-card__entry {
-  display: flex;
-  margin: 3px 0;
-}
-
-.overview-card__entry-title {
-  font-size: large;
-}
-
-.overview-card__entry-data {
-  color: #1DA1F2;
-  font-size: larger;
+.profile-card__stats {
+  font-size: small;
+  color: darkgray;
 }
 
 .stats-card__entry {
@@ -56,6 +50,20 @@ body {
   margin: 3px 0;
 }
 
-.stats-card__icon {
+.stats-card__data {
+  color: #1DA1F2;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.stats-card__icon--twitter {
+  color: #1DA1F2;
+}
+
+.stats-card__icon--heart {
   color: red;
+}
+
+.stats-card__icon--retweet {
+  color: green;
 }

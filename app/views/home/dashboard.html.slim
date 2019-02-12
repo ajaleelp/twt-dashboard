@@ -2,31 +2,37 @@
   .card.dashboard-card.col-md-10.offset-md-1.p-0.mt-5.shadow
     .card-header.dashboard-header.row.align-items-center
       - if @data
-        .dashboard-body__profile-card.offset-1.col-3.d-flex
-          = image_tag @data.profile[:avatar], class: 'profile-card__profile-pic my-auto mr-3'
-          .profile-card__details.d-flex.flex-column.my-auto
+        .dashboard-body__profile-card.offset-lg-1.col-lg-5.d-flex.flex-column.flex-lg-row.align-items-center
+          = image_tag @data.profile[:avatar], class: 'profile-card__profile-pic my-auto mr-md-3'
+          .profile-card__details.d-flex.flex-column.align-items-center.align-items-lg-start
             .profile-card__name #{@data.profile[:name]}
             .profile-card__handle @#{@data.profile[:screen_name]}
-        .col-7.d-flex
-          .overview-card.d-flex.flex-column
-            .overview-card__entry
-              .overview-card__entry-title Tweets:&nbsp;
-              .overview-card__entry-data #{@data.profile[:tweets_count]}
-            .overview-card__entry
-              .overview-card__entry-title Followers:&nbsp;
-              .overview-card__entry-data #{@data.profile[:followers_count]}
-            .overview-card__entry
-              .overview-card__entry-title Following:&nbsp;
-              .overview-card__entry-data #{@data.profile[:friends_count]}
-          .stats-card.d-flex.flex-column
+            .profile-card__stats
+              |Followers:
+              span.twt-color #{@data.profile[:followers_count]}
+              |&nbsp;Following:
+              span.twt-color #{@data.profile[:friends_count]}
+        .col-lg-3.d-flex.pt-3.pt-lg-0
+          .col-4.stats-card.d-flex.flex-column.justify-content-center.align-items-center
             .stats-card__entry
-              .stats-card__icon
-                i.fa.fa-hourglass
-              .stats-card__data &nbsp;#{@data.profile[:favorites_count]}
-      - if user_signed_in?
-        = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary col-1'
+              .stats-card__icon--twitter
+                i.fab.fa-twitter.fa-3x
+            .stats-card__data &nbsp;#{@data.profile[:tweets_count]}
+          .col-4.stats-card.d-flex.flex-column.justify-content-center.align-items-center
+            .stats-card__entry
+              .stats-card__icon--heart
+                i.fas.fa-heart.fa-3x
+            .stats-card__data &nbsp;#{@data.profile[:favorites_count]}
+          .col-4.stats-card.d-flex.flex-column.justify-content-center.align-items-center
+            .stats-card__entry
+              .stats-card__icon--retweet
+                i.fa.fa-retweet.fa-3x
+            .stats-card__data &nbsp;#{@data.profile[:retweets_count]}
+        = link_to destroy_user_session_path, method: :delete, class: 'col-lg-2 offset-lg-1 btn btn-primary' do
+          i.fas.fa-sign-out-alt
+          |&nbsp;Sign Out
       - else
-        = link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path, class: 'btn btn-primary col-1'
+        = link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path, class: 'btn btn-primary col-1 offset-1'
     .card-body.p-0
       - if @data
         ul.p-4
