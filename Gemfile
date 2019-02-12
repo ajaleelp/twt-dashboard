@@ -75,3 +75,5 @@ gem 'omniauth-twitter'
 
 # Webpack FTW
 gem 'webpacker', '~> 3.5'
+
+gem "chartkick"
