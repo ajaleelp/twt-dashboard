@@ -1,24 +1,16 @@
-# README
+### Note: This is a work-in-progress. Stuff could be broken due to active development 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Twitter Dashboard
 
-Things you may want to cover:
+A simple dashboard for analyzing one's life on twitter. For the latest version live
+visit: https://twt-dashboard.herokuapp.com/
 
-* Ruby version
+#### Stack: Ruby on Rails 5.2.2. + Webpacker + Bootstrap 4
 
-* System dependencies
+Currently implemented:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* OmniAuth via Twitter
+* Overview including total tweets, likes received & retweets received.
+* 'Top Hit' tweet - the tweet with the most likes + retweets.
+* Impact trend: Weekly count of tweets, likes & retweets.
+* tbc...
